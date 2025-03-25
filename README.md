@@ -25,58 +25,37 @@ Testing the webserver.
 from http.server import HTTPServer, BaseHTTPRequestHandler
 content = """
 <html>
-<title>Top Software Industries</title>
-<body>
-<table border="2" cellspacing="10"cellpadding="6">
-<caption>Top 5 Revenue Generating Software Companies </caption>
-<tr>
-<th>s.no</th>
-<th>companies</th>
-<th>revenue</th>
-</tr>
-<tr>
-<th>1</th>
-<th>Microsoft</th>
-<th> 65 billion</th>
-</tr>
-<tr>
-<th>2</th>
-<th>oracle</th>
-<th>29.6 billion</th>
-</tr>
-<tr>
-<th>3</th>
-<th>IBM</th>
-<th>29.1 billion</th>
-</tr>
-<tr>
-<th>4</th>
-<th>SAP</th>
-<th>6.4 billion</th>
-</tr>
-<tr>
-<th>5</th>
-<th>symentec</th>
-<th>5.6 billion</th>
-</body>
+    <body>
+        <h1 align="center">Laptop Specification (NAME:NAVINKUMAR.S REG NO:24901075)</h1>
+        <ol>
+            <li>Device Name     NAVIN</li>
+               <li>Processor       13th  Gen Intel(R) Core(TM) i5-1335U 1.30 GHz</li> 
+               <li>Installed RAM	16.0 GB (15.7 GB usable)</li>
+               <li>Device ID	    15EEA3B2-7EF5-4DEC-903D-577382C3C005</li>
+               <li>Product ID	    00342-42708-27268-AAOEM</li>
+               <li>System type	    64-bit operating system, x64-based processor</li>
+               <li>Pen and touch	No pen or touch input is available for this display</li>
+        </ol>     
+    </body>
 </html>
+
 """
 class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
         print("request received")
         self.send_response(200)
-        self.send_header('content-type','text/html; charset=utf-8')
+        self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
-server_address=('',8000)
+server_address = ('',8000)
 httpd = HTTPServer(server_address,myhandler)
-print("my webserver is running....")
+print("my webserver is running...")
 httpd.serve_forever()
-```  
+```
 # OUTPUT:
-![Screenshot 2025-03-24 140844](https://github.com/user-attachments/assets/1dbc21db-38f9-4c68-ac01-aa4b29468eb7)
+![Screenshot 2025-03-25 151541](https://github.com/user-attachments/assets/400b7012-0b00-4f77-90e8-08f1bfbdadc7)
 
-![Screenshot 2025-03-24 140812](https://github.com/user-attachments/assets/840acf92-8467-490b-9d45-2595f22870fb)
+![Screenshot 2025-03-25 151519](https://github.com/user-attachments/assets/779b34fb-3989-470a-9da2-a9a4725ee206)
 
 # RESULT:
 The program for implementing simple webserver is executed successfully.
